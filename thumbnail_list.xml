@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<thumbnails>
+	
+	<config 
+		auto_align="true"
+		fullscreen_button="false"
+		folder="thumbnails/"
+		tween_duration="0.3"
+		tn_border_size="0"
+		tn_border_color="0xFFFFFF"
+		tn_alpha="true"
+		x_spacing="125"
+		y_spacing="0"
+		side_tn_count="3">
+	</config>
+	
+	<thumbnail> 
+		<filename>1.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+	<thumbnail> 
+		<filename>2.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+	<thumbnail> 
+		<filename>3.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+	<thumbnail> 
+		<filename>4.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+	<thumbnail> 
+		<filename>5.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+	<thumbnail> 
+		<filename>6.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+	<thumbnail> 
+		<filename>7.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+	<thumbnail> 
+		<filename>8.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+	<thumbnail> 
+		<filename>9.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+	<thumbnail> 
+		<filename>10.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+	<thumbnail> 
+		<filename>11.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+	<thumbnail> 
+		<filename>12.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+	<thumbnail> 
+		<filename>13.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+	<thumbnail> 
+		<filename>14.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+	<thumbnail> 
+		<filename>15.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+
+</thumbnails>

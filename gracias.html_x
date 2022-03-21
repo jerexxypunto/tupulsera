@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Pulseras de Silicona | Pulseras personalizadas | Tu Pulsera</title>
+
+<meta name="keywords" content="pulseras, tu pulsera, pulseras personalizadas, pulseras de silicona" />
+
+<meta name="description" content="Tu Pulsera.cl es una empresa joven, dedicada a  la fabricación de Pulseras de
+ Silicona Personalizadas. Buscamos innovar  en diseños únicos  siempre pensando en ti… en tu mundo! " />
+ 
+<link href="bcd_style.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="css/orman.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />	
+
+<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/ddsmoothmenu.js">
+
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+</script>
+
+<script language="javascript" type="text/javascript">
+ddsmoothmenu.init({
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+</script>
+
+<link rel="stylesheet" href="css/slimbox2.css" type="text/css" media="screen" /> 
+<script type="text/JavaScript" src="js/slimbox2.js"></script> 
+<!--  t e m p l a t e m o  372  t i t a n i u m  -->
+</head>
+<body onload="MM_preloadImages('images/facebook_h.png','images/twitter_h.png')">
+
+<div id="templatemo_wrapper">
+	<div id="templatemo_header">
+    	<div id="site_title"><a href="#"></a></div>
+<div id="templatemo_search">
+        <a href="http://www.facebook.com/tupulsera" target="_blank"><img src="images/facebook.png" width="52" height="52" id="Image1" title="Encuentranos en Facebook!" onmouseover="MM_swapImage('Image1','','images/facebook_h.png',1)" onmouseout="MM_swapImgRestore()"/></a>
+        <a href="https://twitter.com/tupulsera" target="_blank"><img src="images/twitter.png" width="198" height="52" id="Image2" title="Siguenos! " onmouseover="MM_swapImage('Image2','','images/twitter_h.png',1)" onmouseout="MM_swapImgRestore()"/></a>
+       
+        </div>
+    </div><!-- END of templatemo_header -->
+    <div id="templatemo_menu" class="ddsmoothmenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        
+           
+            <li><a href="trabajos.html">Trabajos</a></li>
+            
+            <li><a href="creatupulsera.html">Productos</a></li>
+            
+            
+            
+            
+            <li><a href="contacto.html" class="selected">Contacto</a></li>
+        </ul>
+        <br style="clear: left" />
+    </div> <!-- end of templatemo_menu -->
+    <div id="templatemo_main">
+      <h2>MENSAJE ENVIADO!</h2>
+
+         <div class="col two-third_contact">
+         
+         <p>Gracias por contactarnos, te responderemos a la brevedad!.</p>
+          
+         <div id="contact_form">
+           <form method="post" name="contact" action="php/tupulsera_mail.php">
+           
+                    <label for="name">Nombre:</label> <input type="text" id="name" name="name" class="input_field" />
+                    <div class="clear h20"></div>
+                    
+                    <label for="email">Email:</label> <input type="text" id="email" name="email" class="input_field" />
+                    <div class="clear h20"></div>
+                    
+                    <label for="phone">Teléfono:</label> <input type="text" name="phone" id="phone" class="input_field" />
+                    <div class="clear h20"></div>
+                    
+                    <label for="pulsera">Tipo de Pulsera:</label> <input type="text" id="pulsera" name="pulsera" class="input_field" />
+                    <div class="clear h20"></div>
+                    
+                    <label for="cantidad">Cantidad:</label> <input type="text" id="cantidad" name="cantidad" class="input_field" />
+                    <div class="clear h20"></div>
+                    
+                    <label for="fraseologo">Frase y/o Logo*:</label> <input type="text" id="fraselogo" name="fraselogo" class="input_field" />
+                    <div class="clear h20"></div>
+                    
+                    <label for="colorpulsera">Color Pulsera:</label> <input type="text" id="colorpulsera" name="colorpulsera" class="input_field" />
+                    <div class="clear h20"></div>
+                    
+                    <label for="colorfrase">Color Frase:</label> <input type="text" id="colorfrase" name="colorfrase" class="input_field" />
+                    <div class="clear h20"></div>
+                    
+                    
+                    <label for="comments">Comentarios:</label> <textarea id="text" name="comments" rows="0" cols="0" class="required"></textarea>
+                  	<div class="clear h20"></div>
+                    
+                    <div id="botones">
+                    <input type="submit" class="submit_btn left" name="submit" id="submit" value="Enviar" /><br /><br />
+                  	<input type="reset" class="submit_btn right" name="reset" id="reset" value="Borrar" />
+                    </div>
+                    
+                </form>
+            </div> 
+            
+            <br/><br/>
+          
+          
+          
+          
+        <h2>F.A.Q</h2>
+           <h3>¿ Como realizo mi pedido?</h3>
+            <p>Para realizar tu pedido nos  debes escribir  a contacto@tupulsera.cl , especificar  tus requerimientos
+            ( tipo de pulsera, color de pulsera, color de letras o logo)  indicar la cantidad que necesitas. También si
+            lo deseas puedes adjuntar una imagen o logo, nosotros preparemos una propuesta grafica  basada en tus
+            requerimientos lo antes posible.</p>
+            
+        <h3>¿ Cual es el tiempo para fabricar mi pedido?</h3>
+            <p>Las ordenes de menos de 1000 unidades  se producen en 20  días. Las ordenes  de 1000 unidades hacia arriba
+              tardan alrededor de 35 días.</p>
+            
+        <h3>¿ Cual es la cantidad mínima?</h3>
+           <p>La  Cantidad mínima para fabricar es de 200 unidades.</p>
+          
+         <h3>Tipos de Pulseras:</h3>
+            
+             
+             <div id="contact_bracelets">
+             <img src="images/1C.jpg" width="253" height="169"/>
+             <img src="images/2C.jpg" width="253" height="169"/>
+             <img src="images/3C.jpg" width="253" height="169"/>
+             </div>
+             
+             
+            <h3>¿Hacen envíos?</h3>
+              <p>SI , a todo Chile, el costo del envío esta incluido ! por  lo que recibirás  tu pedido  absolutamente
+               gratis en el lugar que nos indiques.-</p>
+            
+            <h3>¿ Por qué elegir  TuPulsera.cl?</h3>
+              <p> Somos pioneros en pulseras de silicona personalizadas en Chile ,   la satisfacción de  nuestros clientes
+               nos avala, te garantizamos hacer realidad tu idea!</p>
+            
+             <p>Escríbenos  a: contacto@tupulsera.cl</p>
+          
+          
+          
+          
+          
+          
+         <div id="contact_form"></div> 
+		</div>
+        <div class="clear"></div> 
+    </div><!-- END of templatemo_main -->
+</div><!-- END of templatemo_wrapper --><!-- END of templatemo_bottom_wrapper -->    
+<div id="templatemo_footer_wrapper">    
+    <div id="templatemo_footer">
+    	<p>Derechos Reservados © 2014 <a href="#">Tu Pulsera</a> |
+           Diseño:<a href="http://www.bcdmultimedia.cl" target="_blank">BCD Multimedia</a></p>
+    </div><!-- END of templatemo_footer -->
+</div><!-- END of templatemo_footer_wrapper -->
+</body>
+</html>

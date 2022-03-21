@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<thumbnails>
+	
+	<config 
+		auto_align="true"
+		fullscreen_button="false"
+		folder="thumbnails/"
+		tween_duration="0.3"
+		tn_border_size="0"
+		tn_border_color="0xFFFFFF"
+		tn_alpha="true"
+		x_spacing="125"
+		y_spacing="0"
+		side_tn_count="3">
+	</config>
+	
+	<thumbnail> 
+		<filename>1tyv.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+	<thumbnail> 
+		<filename>2tyv.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+	<thumbnail> 
+		<filename>3tyv.jpg</filename> 
+		<url></url> 
+		<target></target> 
+	</thumbnail> 
+	
+	
+
+</thumbnails>
