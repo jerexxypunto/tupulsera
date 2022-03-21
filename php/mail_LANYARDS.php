@@ -99,16 +99,54 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			$headers  .= "Reply-To: {$_POST['email']}";
 		}
 
-		if (mail($yourEmail,$subject,$message,$headers)) {
-			if (!empty($thanksPage)) {
-				header("Location: $thanksPage");
-				exit;
-			} else {
-				$result = 'Your mail was successfully sent.';
+		// if (mail($yourEmail,$subject,$message,$headers)) {
+		// 	if (!empty($thanksPage)) {
+		// 		header("Location: $thanksPage");
+		// 		exit;
+		// 	} else {
+		// 		$result = 'Your mail was successfully sent.';
+		// 	}
+		// } else {
+		// 	$error_msg = 'Your mail could not be sent this time.';
+		// }
+
+			use PHPMailer\PHPMailer\PHPMailer;
+			use PHPMailer\PHPMailer\Exception;
+
+			require 'PHPMailer/src/Exception.php';
+			require 'PHPMailer/src/PHPMailer.php';
+			require 'PHPMailer/src/SMTP.php';
+
+
+			$respuesta;
+
+
+			$mail = new PHPMailer;
+			$my_email = 'contacto@tupulsera.cl';
+			$to_email = 'jerexxypunto@gmail.com';
+			try {        
+					$mail->SMTPDebug = 3;   
+
+					$mail->isSMTP();                                      // Set mailer to use SMTP
+					$mail->Host = 'mail.tupulsera.cl';  // Specify main and backup SMTP servers
+					$mail->SMTPAuth = true;                               // Enable SMTP authentication
+					$mail->Username = $my_email;                 // SMTP username
+					$mail->Password = '@Jworg1914';                           // SMTP password
+					$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+					$mail->Port = 465;                                    // TCP port to connect to
+
+					$mail->setFrom($my_email, 'tupulsera.cl');
+					$mail->addAddress($to_email, $nombre);     
+
+
+					$mail->isHTML(true);                                  //Set email format to HTML
+					$mail->Subject = $subject;
+					$mail->Body    = $message;
+					$mail->send();
+					$respuesta = 'El mensaje fue enviado correctamente';
+			} catch (Exeption $e) {
+					$respuesta = "Hubo un error al enviar el mensaje: {$mail->ErrorInfo}";
 			}
-		} else {
-			$error_msg = 'Your mail could not be sent this time.';
-		}
 	} else {
 		if (empty($error_msg))
 			$error_msg = 'Your mail looks too much like spam, and could not be sent this time. ['.$points.']';
