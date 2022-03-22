@@ -1,160 +1,61 @@
 <?php
-function isBot() {
-	$bots = array("Indy", "Blaiz", "Java", "libwww-perl", "Python", "OutfoxBot", "User-Agent", "PycURL", "AlphaServer", "T8Abot", "Syntryx", "WinHttp", "WebBandit", "nicebot");
-	
-	$isBot = false;
-	foreach ($bots as $bot)
-	if (strpos($_SERVER['HTTP_USER_AGENT'], $bot) !== false)
-		$isBot = true;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-	if (empty($_SERVER['HTTP_USER_AGENT']) || $_SERVER['HTTP_USER_AGENT'] == " ")
-		$isBot = true;
-	
-	exit("Bots not allowed.</p>");
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+$respuesta;
+
+$mail = new PHPMailer;
+$my_email = 'contacto@tupulsera.cl';
+$to_email = 'jerexxypunto@gmail.com';
+try {        
+        $mail->SMTPDebug = 3;                               // Enable verbose debug output
+        $ancho = $_POST['color'];
+        $impresion =  $_POST['color_frase'];
+        $cantidad = $_POST['cantidad']; 
+        $nombre = $_POST['name'];
+        $email = $_POST['email'];
+        $telefono = $_POST['phone'];
+        $msj = $_POST['comments'];
+        $msj = utf8_decode($msj);
+
+        $mail->isSMTP();                                      // Set mailer to use SMTP
+        $mail->Host = 'mail.tupulsera.cl ';  // Specify main and backup SMTP servers
+        $mail->SMTPAuth = true;                               // Enable SMTP authentication
+        $mail->Username = $my_email;                 // SMTP username
+        $mail->Password = '@Jworg914';                           // SMTP password
+        $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+        $mail->Port = 465;                                    // TCP port to connect to
+
+        $mail->setFrom($my_email, 'tupulsera.cl');
+        $mail->addAddress($to_email, $nombre);     
+
+
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->Subject = 'Nuevo pedido de tupulsera.cl';
+        $mail->Body    = '<style>
+                                h2{padding-bottom:10px;margin-bottom:0;}
+                                p b{font-weight:bolder;}
+                          </style>
+                          <h2>Nuevo pedido de'.$nombre.'</h2>
+                          <p><b>Ancho: </b>'.$ancho.'</p>
+						  <p><b>Impresión: </b>'.$impresion.'</p>
+						  <p><b>Cantidad: </b>'.$cantidad.'</p>
+						  <h2>Datos de contacto:'.$cantidad.'</h2>
+						  <p><b>email: </b>'.$email.'</p>
+						  <p><b>Telefono: </b>'.$telefono.'</p>
+						  <p><b>Comentarios: </b>'.$msj.'</p>';
+        $mail->send();
+
+		echo $mail->body;
+        $respuesta = 'El mensaje fue enviado correctamente';
+} catch (Exeption $e) {
+        $respuesta = "Hubo un error al enviar el mensaje: {$mail->ErrorInfo}";
 }
 
-function get_data($var) {
-	if (isset($_POST[$var]))
-		echo htmlspecialchars($_POST[$var]);
-}
-// This work is licensed under the MIT License - http://www.opensource.org/licenses/mit-license.php
-
-
-// OPTIONS - PLEASE CONFIGURE THESE BEFORE USE!
-
-	$yourEmail = "tupulsera.cl@gmail.com";
-
-	$yourWebsite = "http://www.tupulsera.cl/"; // the name of your website
-	$thanksPage = '../gracias.html'; // URL to 'thanks for sending mail' page; leave empty to keep message on the same page 
-	$maxPoints = 4; // max points a person can hit before it refuses to submit - recommend 4
-
-
-// --- DO NOT EDIT BELOW HERE -----------------------
-
-$error_msg = null;
-$result = null;
-
-
-
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-	function clean($data) {
-		$data = trim(stripslashes(strip_tags($data)));
-		return $data;
-	}
-	
-	$points = (int)0;
-	
-	$badwords = array("adult", "beastial", "bestial", "blowjob", "clit", "cum", "cunilingus", "cunillingus", "cunnilingus", "cunt", "ejaculate", "fag", "felatio", "fellatio", "fuck", "fuk", "fuks", "gangbang", "gangbanged", "gangbangs", "hotsex", "hardcode", "jism", "jiz", "orgasim", "orgasims", "orgasm", "orgasms", "phonesex", "phuk", "phuq", "porn", "pussies", "pussy", "spunk", "xxx", "viagra", "phentermine", "tramadol", "adipex", "advai", "alprazolam", "ambien", "ambian", "amoxicillin", "antivert", "blackjack", "backgammon", "texas", "holdem", "poker", "carisoprodol", "ciara", "ciprofloxacin", "debt", "dating", "porn", "link=", "voyeur");
-	$exploits = array("content-type", "bcc:", "cc:", "document.cookie", "onclick", "onload", "javascript");
-
-	foreach ($badwords as $word)
-		if (strpos($_POST['comments'], $word) !== false)
-			$points += 2;
-	
-	foreach ($exploits as $exploit)
-		if (strpos($_POST['comments'], $exploit) !== false)
-			$points += 2;
-	
-	if (strpos($_POST['comments'], "http://") !== false || strpos($_POST['comments'], "www.") !== false)
-		$points += 2;
-	if (isset($_POST['nojs']))
-		$points += 1;
-	if (preg_match("/(<.*>)/i", $_POST['comments']))
-		$points += 2;
-	if (strlen($_POST['name']) < 3)
-		$points += 1;
-	if (strlen($_POST['comments']) < 15 || strlen($_POST['comments'] > 1500))
-		$points += 2;
-
-	foreach ($_POST as $key => $value)
-		$_POST[$key] = trim($value);
-	
-	if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['comments'])) {
-		$error_msg .= "Nombre, e-mail y comentarios son campos obligatorios, complete nuevamente. \n";
-	} elseif (strlen($_POST['name']) > 50) {
-		$error_msg .= "The name field is limited at 15 characters. Your first name or nickname will do! \n";
-	} elseif (!preg_match("/^[a-zA-Z-'\s]*$/", stripslashes($_POST['name']))) {
-		$error_msg .= "Los campos no deben contener caracteres especiales (ñ), por favor envie el mensaje nuevamente. \n";
-	} elseif (!preg_match('/^([a-z0-9])(([-a-z0-9._])*([a-z0-9]))*\@([a-z0-9])(([a-z0-9-])*([a-z0-9]))+' . '(\.([a-z0-9])([-a-z0-9_-])?([a-z0-9])+)+$/i', strtolower($_POST['email']))) {
-		$error_msg .= "That is not a valid e-mail address. \n";
-	} elseif (!empty($_POST['url']) && !preg_match('/^(http|https):\/\/(([A-Z0-9][A-Z0-9_-]*)(\.[A-Z0-9][A-Z0-9_-]*)+)(:(\d+))?\/?/i', $_POST['url']))
-		$error_msg .= "Invalid website url.";
-	
-	if ($error_msg == NULL && $points <= $maxPoints) {
-		$subject = "Solicitud: LANYARDS";
-
-		$message = "Cliente: \n\n";
-		foreach ($_POST as $key => $val) {
-			$message .= ucwords($key) . ": " . clean($val) . "\r\n";
-		}
-		$message .= 'IP: '.$_SERVER['REMOTE_ADDR']."\r\n";
-		$message .= 'Browser: '.$_SERVER['HTTP_USER_AGENT']."\r\n";
-		$message .= 'Points: '.$points;
-
-		if (strstr($_SERVER['SERVER_SOFTWARE'], "Win")) {
-			$headers   = "From: ".$yourEmail."\r\n";
-			$headers  .= "Reply-To: {$_POST['email']}";
-		} else {
-			$headers   = "From: Tu Pulsera.cl <tupulsera.cl@gmail.com> \r\n";
-			$headers  .= "Reply-To: {$_POST['email']}";
-		}
-
-		// if (mail($yourEmail,$subject,$message,$headers)) {
-		// 	if (!empty($thanksPage)) {
-		// 		header("Location: $thanksPage");
-		// 		exit;
-		// 	} else {
-		// 		$result = 'Your mail was successfully sent.';
-		// 	}
-		// } else {
-		// 	$error_msg = 'Your mail could not be sent this time.';
-		// }
-
-			use PHPMailer\PHPMailer\PHPMailer;
-			use PHPMailer\PHPMailer\Exception;
-
-			require 'PHPMailer/src/Exception.php';
-			require 'PHPMailer/src/PHPMailer.php';
-			require 'PHPMailer/src/SMTP.php';
-
-
-			$respuesta;
-
-
-			$mail = new PHPMailer;
-			$my_email = 'contacto@tupulsera.cl';
-			$to_email = 'jerexxypunto@gmail.com';
-			try {        
-					$mail->SMTPDebug = 3;   
-
-					$mail->isSMTP();                                      // Set mailer to use SMTP
-					$mail->Host = 'mail.tupulsera.cl';  // Specify main and backup SMTP servers
-					$mail->SMTPAuth = true;                               // Enable SMTP authentication
-					$mail->Username = $my_email;                 // SMTP username
-					$mail->Password = '@Jworg1914';                           // SMTP password
-					$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-					$mail->Port = 465;                                    // TCP port to connect to
-
-					$mail->setFrom($my_email, 'tupulsera.cl');
-					$mail->addAddress($to_email, $nombre);     
-
-
-					$mail->isHTML(true);                                  //Set email format to HTML
-					$mail->Subject = $subject;
-					$mail->Body    = $message;
-					$mail->send();
-					$respuesta = 'El mensaje fue enviado correctamente';
-			} catch (Exeption $e) {
-					$respuesta = "Hubo un error al enviar el mensaje: {$mail->ErrorInfo}";
-			}
-	} else {
-		if (empty($error_msg))
-			$error_msg = 'Your mail looks too much like spam, and could not be sent this time. ['.$points.']';
-
-	}
-} else {
-	echo "error";
-}
-
-echo $error_msg;
+echo $respuesta;
+header("location:../gracias.html");
 ?>
