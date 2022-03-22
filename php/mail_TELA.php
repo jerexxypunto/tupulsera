@@ -20,9 +20,9 @@
 			$cabeceras = 'MIME-Version: 1.0' . "\r\n";
 			$cabeceras .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 			$to = 'tupulsera.cl@gmail.com';
-			$subject = "Pedido: Pulseras tyvek";
+			$subject = "Pedido: Pulseras de tela full color";
 			$message = "<html>".
-						"<h2>Tiene un pedido de una Pulseras tyvek</h2>".
+						"<h2>Tiene un pedido de una Pulseras de tela full color</h2>".
 						"<h3>Datos de contacto:</h3>".
 						"<p><b>Nombre:</b> $nombre</p>".
 						"<p><b>Email:</b> $email</p>".
