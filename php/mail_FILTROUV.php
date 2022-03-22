@@ -19,7 +19,7 @@
 
 			$cabeceras = 'MIME-Version: 1.0' . "\r\n";
 			$cabeceras .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-			$to = 'jerexxypunto@gmail.com';
+			$to = 'tupulsera.cl@gmail.com';
 			$subject = "Pedido: Pulseras filtro UV";
 			$message = "<html>".
 						"<h2>Tiene un pedido de una con Pulsera filtro UV</h2>".
